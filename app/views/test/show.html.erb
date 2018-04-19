@@ -2,21 +2,30 @@
 <!-- HTML　テキスト入力フォーム -->
 <p><%= @name %></p>
 <p><%= @age %></p>
-<p><%= @gender %></p>
+<!-- <p><%= @gender %></p> -->
 <p><%= @text %></p>
+<hr/>
 
-<h2>Rails表記 foodチェックボックス</h2>
+<h3>Rails表記 foodチェックボックス</h3>
+<p>モデルのdisFoodメソッドを利用</p>
   <p><%= simple_format(@checked_food) %></p>
+  <hr/>
 
-<h3>復習フォームは送信されました</h3>
-<p><%= simple_format(@check) %></p>
 
-<h2>性別チェックボックス</h2>
+<h3>A~Dチェックと(処理未実装)満足度ラジオボタン</h3>
+  <p><%= simple_format(@check) %></p>
+  <hr/>
+
+
+<h2>性別ラジオボタン</h2>
   <p><%= @gender %></p>
+  <hr/>
 
 
 <h2>言語チェックボックス</h2>
-    <p><%= simple_format(@checked_prog) %></p>
+  <p><%= simple_format(@checked_prog) %></p>
+  <hr/>
 
 <h2>言語ラジオボタン</h2>
-<p><%= @program %></p>
+  <p><%= @program %></p>
+  <hr/>

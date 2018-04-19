@@ -1,3 +1,6 @@
+<h2><%= @hello %></h2>
+<h2><%= simple_format(@dispd) %></h2>
+
 <%= form_tag('/test', method: :post) do %>
 <!-- #↑ 送信ボタンを押した時に' /URL'で指定したページに飛ぶ -->
 <!-- method で postを指定 -->
@@ -7,28 +10,39 @@
   <!-- #placeholder属性に値を入れると、入力例としてあらかじめ表示させられる -->
 
   <p>年齢：<input placeholder="" type="text" name="age"></p>
-  <p>性別：<input placeholder="" type="text" name="gender"></p>
+  <!-- <p>性別：<input placeholder="" type="text" name="gender"></p> -->
   <p>住所：</p>
     <p><textarea cols="30" name="text" placeholder="ここに住所を入力" rows="10"></textarea></p>
     <!-- cols:textareaの横幅 rows:textareaの高さ　の設定 -->
 <!-- 送信を押した時にバックでこのようにParametersという配列(ハッシュ)が作られている -->
 <!-- Parameters: {"name"=>"丸茂", "age"=>"５", "gender"=>"m", "text"=>"山梨"} -->
 <!-- コントローラーのアクションで指定すれば値を取り出せる -->
+<hr/>
 
 
-
-<h2>HTML書式：チェックボックス練習</h2>
+<h2>HTML書式：チェックボックス</h2>
 <p><input type="checkbox" name="food2[]" value="ステーキ">ステーキ</p>
 <p><input type="checkbox" name="food2[]" value="寿司">寿司</p>
 <p><input type="checkbox" name="food2[]" value="天ぷら">天ぷら</p>
-<!-- ↓画像でボタン -->
+<hr/>
+<!-- ------------------------------------------ -->
 
 
-<h2>Rails記述：チェックボックス練習</h2>
+<h2>Rails記述：チェックボックス</h2>
 <p>ステーキ:<%=  check_box 'food2', '',{}, "ステーキ", false %></p>
 <p>てんぷら:<%=  check_box 'food2', '',{}, "てんぷら", false %></p>
 <p>寿司:<%=  check_box 'food2', '',{},  "寿司", false %></p>
+<hr/>
 
+<!-- ------------------------------------------ -->
+
+<h2>Rails 性別ラジオボタン</h2>
+ <div class="text">
+   <p>男性：<%= radio_button 'gender', '', '男性' %></p>
+   <p>女性：<%= radio_button 'gender', '', '女性',{:checked => true} %></p>
+ </div>
+ <hr/>
+ <!-- ------------------------------------------ -->
 
 
 <h3>復習</h3>
@@ -47,15 +61,12 @@
 <input type="radio" name="manzoku">不満足<br>
 </fieldset>
 <br>
+<hr/>
 
-<h2>Rails ラジオボタン</h2>
- <div class="text">
-   <p>男性：<%= radio_button 'gender', '', '男性' %></p>
-   <p>女性：<%= radio_button 'gender', '', '女性',{:checked => true} %></p>
- </div>
+<!-- ------------------------------------------ -->
 
 
- <hr/>
+
 <h2>言語チェックボックス</h2>
 <p>Java:<%=  check_box 'prog', '',{}, "Java", false %></p>
 <p>Ruby:<%=  check_box 'prog', '',{}, "Ruby", false %></p>
@@ -63,6 +74,9 @@
 <p>Phython:<%=  check_box 'prog', '',{}, "Phython", false %></p>
 
 <hr/>
+<!-- ------------------------------------------ -->
+
+
 <h2>言語ラジオボタン</h2>
  <div class="text">
    <p>Java：<%= radio_button 'program', '', 'Java' %></p>
@@ -70,6 +84,7 @@
    <p>PHP：<%= radio_button 'program', '', 'PHP' %></p>
    <p>Phython<%= radio_button 'program', '', 'Phython' %></p>
  </div>
+ <hr/>
 
 <p><input type="submit" value="送信"></p>
 <% end %>

@@ -6,7 +6,7 @@ class Test2Controller < ApplicationController
   def show
     @hobby = params[:hobby]
     @country = params[:country]
-    @programing = params[:programing]
+    @programing = params[:programming]
 
     # チェックボックスの送信処理
     if params[:goodbad].nil?

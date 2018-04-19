@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'form/index'
+
   get 'test/index'
 
   get '/test' , to: 'test#index'
